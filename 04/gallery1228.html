@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="galleryWrap">
+      <h1>이미지갤러리</h1>
+      <p>
+        <a href="javasvript:void(0)" onclick="prevGallery()">◀</a>
+        <img src="./img/img/img1.jpg" alt="img1" width="300" height="200" id="gallery" />
+        <a href="javasvript:void(0)" onclick="nextGallery()">▶</a>
+      </p>
+      <!-- javasvript:void(0) = 자바스크립트에서 통제한다는 뜻으로 적어 놓는다. -->
+    </div>
+
+    <script>
+      //전역변수=함수외부에 쓰면 밑에 적혀질 모든 함수에 적용된다.
+      let num = 1;
+      //위에서 아래로
+      function nextGallery() {
+        num++;
+        if (num >= 7) {
+          num = 1;
+        }
+        document.getElementById("gallery").src = "./img/img/img" + num + ".jpg";
+      }
+
+      function prevGallery() {
+        num--;
+        if (num <= 0) {
+          num = 7;
+        }
+        document.getElementById("gallery").src = "./img/img/img" + num + ".jpg";
+      }
+    </script>
+  </body>
+</html>

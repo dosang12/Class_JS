@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <!-- <script>
+      $(function () {
+        $("p").css("color", "green");
+        $("p.blue").css("color", "blue");
+      });
+    </script> -->
+    <style>
+      p {
+        font-size: 32px;
+      }
+    </style>
+    <script>
+      //$() = document.addEventListener("DOMcontentLoaded",)
+      //$(,function(){})
+      // = document.addEventListener("DOMcontentLoaded",function(){})
+      // = document.addEventListener("DOMcontentLoaded", () => {});
+      document.addEventListener("DOMContentLoaded", () => {
+        // $("p") (같은의미끼리 나누기) // .css("color", "green");
+        // document.querySelector("p") // .style
+        document.querySelector("p").style.color = "green";
+        document.querySelector("p.blue").style.color = "blue";
+      });
+    </script>
+  </head>
+  <body>
+    <p>초록색</p>
+    <p class="blue">파란색</p>
+  </body>
+</html>
