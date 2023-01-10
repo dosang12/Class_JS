@@ -50,9 +50,13 @@
           li_width = list.find("li").eq(0).width(),
           copyObj = list.find("li").clone(),
           ctrl = $(".ctrl");
-
         list.append(copyObj);
+        //변수선언
 
+
+
+
+        
         const timer = setInterval(autoplay, 2000);
 
         ctrl.click(function () {
@@ -72,7 +76,8 @@
           }
           num++;
           list.stop().animate({ "margin-left": -li_width * num }, 1000);
-        }
+        } 
+        //autoplay
 
         $(".next").click(function () {
           if (num == total) {
