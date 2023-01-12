@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cursor-sec{
+            width: 100%;
+            height: 150vh;
+            cursor: default;
+        }
+        #m1,#m2{
+            position: absolute;
+            transition: 0.5s;
+        }
+        #cursor{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            z-index: 9090099;
+            background-image: url(./1473345244379_Untitled-5.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            opacity: 0.5;        
+            user-select: none;
+            pointer-events: none;
+        }
+        #m3{
+            animation: rotate 2.5s infinite alternate;
+            width: 100px;
+            height: 100px;
+            z-index: 9090099;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            opacity: 0.5;        
+            user-select: none;
+            pointer-events: none;
+            animation-play-state: running;
+        }
+        .on{
+            animation-play-state: paused;
+        }
+        @keyframes rotate{
+            0% {transform: perspective(200px) rotateY(0deg);}
+            50%{transform: perspective(200px) rotateY(-180deg);}
+            100%{transform: perspective(200px) rotateY(-360deg);}
+        }
+    </style>
+</head>
+<body>
+    <section class="cursor-sec">
+        <div id="m1"><img src="./1.png" alt="kitty1"></div>
+        <div id="m2"><img src="./2.png" alt="kitty2"></div>
+        <div id="m3"><img src="./3.png" alt="kitty3"></div>
+        <div id="cursor"></div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae aspernatur sint maiores sequi vel blanditiis, tempore dicta similique ullam! Aperiam dolorem praesentium iste tempora illum dolores deleniti, quia quam quaerat.</p>
+    </section>
+    <!-- <script src="mouse_point_js.js"></script>  마우스 js--> 
+    <script src='https://code.jquery.com/jquery-1.12.1.min.js'></script>
+    <script>
+        //제이쿼리.
+        $(window).mousemove(function(e){
+            const cStyle=$(cursor)
+            const pointer={
+                x:e.clientX,
+                y:e.clientY,
+            }
+            $("#m1").css({top:pointer.y/2,left:pointer.x/2})
+            $("#m2").css({top:pointer.y*1.2,left:pointer.x*1.2})
+            $("#cursor").css({top:pointer.y,left:pointer.x,"margin-left":-cStyle.x/2,"margin-top":-cStyle.y/2})
+        })
+        $("#m3").click(function(){
+            $("#m3").addClass(".on");
+        })
+    </script>
+
+</body>
+</html>
