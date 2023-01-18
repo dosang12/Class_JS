@@ -7,7 +7,7 @@ $(function(){
         changeYear:true,
         changeMonth:true,
         showOn:"both",
-        buttonImage:"url(C:\Users\Administrator\Downloads\Calendar)",
+        buttonImage:"C:\Users\Administrator\Downloads\Calendar",
         buttonImageOnly:true,
         yearSuffix:"년",
         monthNames:["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월",],

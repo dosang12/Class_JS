@@ -1,0 +1,40 @@
+:root{
+    --color1:white;
+    --px10 :10px;
+    /* 
+        css 의 변수 선언.
+        유지보수 측면에서 훨씬 쉬워진다.
+        값을 한번에 변경 가능. 
+    */
+    --color: blue;
+    --color: rgba(0,0,0,0.4);
+}
+
+
+header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+header nav ul{
+    display: flex;
+    justify-content: center;
+}
+header nav ul li {
+    margin: 0 calc(var(--px10) * 2);
+    list-style: none;
+}
+header nav ul li a{
+    color: var(--color1);
+    /* 변수를 적용 */
+}
+
+#menu li .active a{
+    color: brown;
+}
+#fp-nav .on .active span{
+    background: red;
+}
