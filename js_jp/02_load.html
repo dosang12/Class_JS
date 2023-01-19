@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load.html</title>
+    <script>
+        addEventListener("DOMContentLoaded",()=>{
+            //load.html 의 요소를 담을 변수를 초기화.
+            var news1=document.querySelector("#newsWrap_1");
+            var news2=document.querySelector("#newsWrap_2");
+            //기본 url설정(전화번호)
+            const url="./01_news.html";
+            //Ajax 작업을 위한 XMLHttpRequest() 객체를 생성해서 request 변수에 할당.  
+            let request=new XMLHttpRequest();
+            //서버에 요청 -> 전화걸기 
+            request
+        })
+    </script>
+</head>
+<body>
+    <h1>I'm Load1</h1>
+    <div id="newsWrap_1"></div>
+    <hr>
+    <h1>I'm Load2</h1>
+    <div id="newsWrap_2"></div>
+</body>
+</html>
