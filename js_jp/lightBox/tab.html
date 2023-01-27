@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <ul>
-        <li class="b1">btn1</li>
-        <li class="b2">btn2</li>
-        <li class="b3">btn3</li>
+      <li class="b1">btn1</li>
+      <li class="b2">btn2</li>
+      <li class="b3">btn3</li>
     </ul>
     <div>
-        <h3 class="h1">para1</h3>
-        <h3 class="h2">para2</h3>
-        <h3 class="h3">para3</h3>
+      <h3 class="h1">para1</h3>
+      <h3 class="h2">para2</h3>
+      <h3 class="h3">para3</h3>
     </div>
-    <script src='https://code.jquery.com/jquery-1.12.1.min.js'></script>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script>
-       $("h3").hide();
-$(".h1").show();
+      const btn = $("ul>li"),
+        panel = $("h3");
 
-$(".b1").click(function(){
-  $("h3").hide();
-  $(".h1").show();
-});
+      panel.hide();
+      panel.eq(0).show;
 
-$(".b2").click(function(){
-  $("h3").hide();
-  $(".h2").show();
-});
+      btn.each(function (i, o) {
+        btn.eq(i);
+      });
 
-$(".b3").click(function(){
-  $("h3").hide();
-  $(".h3").show();
-});
+      btn.eq(0).click(function () {
+        visible(panel.eq(0));
+        hidden(panel.eq(1));
+        hidden(panel.eq(2));
+      });
+      btn.eq(1).click(function () {
+        visible(panel.eq(1));
+        hidden(panel.eq(0));
+        hidden(panel.eq(2));
+      });
+      btn.eq(2).click(function () {
+        visible(panel.eq(2));
+        hidden(panel.eq(0));
+        hidden(panel.eq(1));
+      });
+
+      function visible(obj) {
+        obj.show();
+      }
+      function hidden(obj) {
+        obj.hide();
+      }
     </script>
-</body>
+  </body>
 </html>
