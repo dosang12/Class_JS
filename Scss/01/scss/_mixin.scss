@@ -15,8 +15,9 @@ $px10: 10px;
 @mixin textDecoration($textDecoration) {
   text-decoration: $textDecoration;
 }
-@mixin hover {
-  $color,$deco: none;
+@mixin hover($color, $test) {
+  color: $color;
+  text-decoration: $test;
 }
 
 html {
