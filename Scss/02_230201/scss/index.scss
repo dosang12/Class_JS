@@ -1,11 +1,14 @@
-@import "abstracts/_vaiables.scss";
-@import "abstracts/_mixins.scss";
-@import "base/_base.scss";
-@import "base/_typo.scss";
-@import "base/_animations.scss";
-@import "base/_utilities.scss";
-@import "components/_button.scss";
-@import "components/_nav.scss";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "base/base";
+@import "base/typo";
+@import "base/animations";
+@import "base/utilities";
+@import "components/button";
+@import "components/nav";
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";
 
 /*
     abstracts/

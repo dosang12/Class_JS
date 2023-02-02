@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 small-screen-1 : 900~1200
 small-screen-2 : 701~899
@@ -37,7 +38,7 @@ h2:hover {
 }
 
 h3 {
-  padding: 5rem 0;
+  padding: 0.5rem 0;
   color: #474747;
   font-size: 1.6rem;
   font-weight: 700;
@@ -193,6 +194,363 @@ h3 {
 .nav-checkbox:checked ~ .nav-button .nav-icon::after {
   top: 0;
   transform: rotate(-135deg);
+}
+.nav-body {
+  position: fixed;
+  left: -120%;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1500;
+  opacity: 0;
+  transition: all 0.8s;
+}
+.nav-list {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  width: 100%;
+  text-align: center;
+}
+.nav-link {
+  display: inline-block;
+  font-size: 3rem;
+  text-align: left;
+  width: 250px;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.4s;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 70%);
+  background-size: 220%;
+}
+.nav-link:hover {
+  color: green;
+  background-position: 100%;
+  transform: translateX(1rem);
+}
+.nav-checkbox:checked ~ .nav-body {
+  opacity: 1;
+  left: 0;
+}
+
+header {
+  width: 100%;
+  height: 90vh;
+  background-image: linear-gradient(to right, green 0%, lightgreen 100%), url(../images/2.jpg);
+  background-size: cover;
+  background-blend-mode: multiply;
+  position: relative;
+}
+header #logo-text {
+  position: absolute;
+  left: 7rem;
+  top: 4rem;
+  font-size: 5.6rem;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  color: #fff;
+  letter-spacing: -0.1rem;
+  -webkit-animation-name: moveInLeft;
+          animation-name: moveInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 5;
+          animation-iteration-count: 5;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /*
+    animation : css 속성이 변할때 진행률에 따라 단계별로 보여줌. 
+  */
+}
+header #header-text {
+  position: absolute;
+  left: 7rem;
+  bottom: 23%;
+  color: rgb(168, 168, 168);
+  letter-spacing: -0.1rem;
+  font-weight: 700;
+}
+header #header-text-main {
+  font-size: 4rem;
+  line-height: 7.2rem;
+  -webkit-animation-name: moveInRight;
+          animation-name: moveInRight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+header #header-text-sub {
+  font-size: 2.4rem;
+  margin-top: 3rem;
+  padding-right: 100px;
+  -webkit-animation-name: moveInLeft;
+          animation-name: moveInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+main::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+main #section-about {
+  background-color: #ebebeb;
+  padding: 7rem 0 6.5rem 6rem;
+  width: 66.666%;
+  min-height: 42rem;
+  float: left;
+}
+main #section-about h2 {
+  display: none;
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  main #section-about {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 701px) and (max-width: 899px) {
+  main #section-about {
+    width: 100%;
+    height: 54rem;
+    padding: 7rem 6rem 6.5rem 6rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  main #section-about {
+    width: 100%;
+    height: 60rem;
+    padding: 7rem 6rem 6.5rem 6rem;
+  }
+}
+main #section-about::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+main #section-about-words {
+  width: 65%;
+  padding: 2rem 2rem 0 0;
+  float: left;
+}
+@media screen and (min-width: 701px) and (max-width: 899px) {
+  main #section-about-words {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  main #section-about-words {
+    width: 100%;
+  }
+}
+main #section-about-words p {
+  padding: 1.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: justify;
+}
+main #section-about-photo {
+  position: relative;
+  width: 35%;
+  float: left;
+}
+@media screen and (min-width: 701px) and (max-width: 899px) {
+  main #section-about-photo {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  main #section-about-photo {
+    width: 100%;
+  }
+}
+main #section-about .photo {
+  position: absolute;
+  width: 18rem;
+  height: 12rem;
+  transition: all 0.5s;
+}
+@media screen and (min-width: 701px) and (max-width: 899px) {
+  main #section-about .photo {
+    top: 3rem !important;
+    left: 50% !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  main #section-about .photo {
+    top: 3rem !important;
+    left: 50% !important;
+  }
+}
+main #section-about .photo:hover {
+  transform: scale(1.1);
+  padding: 1rem;
+  border: 3px solid green;
+  z-index: 10;
+}
+main #section-about .photo:nth-child(1) {
+  left: 1rem;
+  top: 3rem;
+}
+@media screen and (min-width: 701px) and (max-width: 899px) {
+  main #section-about .photo:nth-child(1) {
+    transform: translateX(-120%);
+  }
+}
+@media screen and (max-width: 700px) {
+  main #section-about .photo:nth-child(1) {
+    transform: translateX(-120%);
+  }
+}
+main #section-about .photo:nth-child(2) {
+  left: 6rem;
+  top: 10rem;
+}
+main #section-about .photo img {
+  width: 100%;
+  height: 100%;
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.5);
+}
+main #section-etc {
+  width: 33.333%;
+  float: left;
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  main #section-etc {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 701px) and (max-width: 899px) {
+  main #section-etc {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  main #section-etc {
+    width: 100%;
+  }
+}
+main #section-etc [id^=etc-] {
+  height: 14rem;
+}
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  main #section-etc .etc {
+    width: 33.3333%;
+    float: left;
+  }
+}
+@media screen and (min-width: 701px) and (max-width: 899px) {
+  main #section-etc .etc {
+    width: 33.3333%;
+    float: left;
+    height: 22rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  main #section-etc .etc {
+    width: 33.3333%;
+    float: left;
+    height: 22rem;
+  }
+}
+main #section-etc .etc:nth-of-type(1) {
+  background-color: rgb(90, 252, 79);
+}
+main #section-etc .etc:nth-of-type(2) {
+  background-color: rgb(131, 255, 123);
+}
+main #section-etc .etc:nth-of-type(3) {
+  background-color: rgb(176, 255, 170);
+}
+main #section-etc .etc-icon {
+  padding-top: 3.5rem;
+  width: 30%;
+  text-align: center;
+  float: left;
+}
+main #section-etc .etc-icon span {
+  font-size: 6rem;
+}
+main #section-etc .etc-text {
+  padding-top: 1rem;
+  width: 70%;
+  float: left;
+}
+main #section-etc .etc-text p {
+  margin: 0.5rem 0;
+  padding-right: 3.5rem;
+}
+
+footer {
+  color: #b9b9b9;
+  background-color: #3f4a56;
+  padding: 9rem 7rem 3rem 7rem;
+}
+@media screen and (max-width: 700px) {
+  footer {
+    padding: 9rem 7rem 3rem 7rem;
+  }
+}
+footer::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+footer #logo-text-footer {
+  width: 25%;
+  font-size: 4rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  float: left;
+}
+@media screen and (max-width: 700px) {
+  footer #logo-text-footer {
+    margin-right: 6rem;
+    width: 20%;
+  }
+}
+footer #copyright {
+  width: 75%;
+  font-size: 1.2rem;
+  float: left;
+}
+@media screen and (max-width: 700px) {
+  footer #copyright {
+    width: 60%;
+  }
+}
+footer #copyright p:nth-child(1) {
+  margin-bottom: 2rem;
+  word-wrap: break-all;
+  text-align: justify;
+  -moz-column-count: 3;
+       column-count: 3;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+  -moz-column-rule-style: dashed;
+       column-rule-style: dashed;
+  -moz-column-rule-width: 1px;
+       column-rule-width: 1px;
+  -moz-column-rule-color: #888;
+       column-rule-color: #888;
+  -moz-column-width: 1rem;
+       column-width: 1rem;
 }
 
 /*
