@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>col2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+    <style>
+      :root {
+        --h_unit: 25px;
+      }
+      .h25 {
+        height: calc(var(--h_unit) * 1);
+      }
+      .h50 {
+        height: calc(var(--h_unit) * 2);
+      }
+      .h75 {
+        height: calc(var(--h_unit) * 3);
+      }
+    </style>
+  </head>
+  <body class="p-3 m-0 border-0 bd-example bd-example-row">
+    <div class="container text-center">
+      <div class="row justify-content-around bg-dark text-light">
+        <!-- md:@min-width(768px)// lg 992px~ -->
+        <div class="col-md-3 col-lg-4 col-xl-2 bg-primary h50">쫀드기 맛있네</div>
+        <div class="col-md-6 col-lg-4 col-xl-2 bg-warning h50">하나 더 먹어야지</div>
+        <div class="col-md-3 col-lg-4 col-xl-2 bg-primary h50">두개 더 먹어야지</div>
+      </div>
+    </div>
+    <div class="container mt-5 text-center">
+      <div class="row justify-content-around bg-dark text-light">
+        <div class="bg-success col-sm-6 col-md-6 col-lg-3 h50">쫀드기 맛있네</div>
+        <div class="bg-warning col-sm-6 col-md-6 col-lg-6 h50">하나 더 먹어야지</div>
+        <div class="bg-primary col-sm-6 d-md-none d-lg-block col-lg-3 h50">두개 더 먹어야지</div>
+      </div>
+    </div>
+    <div class="container mt-5 text-center">
+      <div class="row justify-content-around bg-dark text-light">
+        <div class="bg-success col-sm-6 col-md-6 col-lg-3 h50">
+          <div class="row">
+            <div class="col-1 bg-warning"></div>
+          </div>
+        </div>
+
+        <div class="bg-warning col-sm-6 col-md-6 col-lg-6 h50">하나 더 먹어야지</div>
+        <div class="bg-primary col-sm-6 d-md-none d-lg-block col-lg-3 h50">다 먹을까?</div>
+      </div>
+    </div>
+
+    <hr />
+    <!-- gutter -->
+    <div class="container px-4 text-center">
+      <div class="row gx-5">
+        <div class="col">
+          <div class="p-3 border bg-light">Custom column padding</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border bg-light">Custom column padding</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
