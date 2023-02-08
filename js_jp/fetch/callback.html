@@ -9,22 +9,34 @@
   <body>
     <script>
       function timer(time) {
-        setTimeout(() => {
-          document.write("안녕 이제는 안녕");
-          timer(timer(1000));
-        }, time);
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(time);
+          }, time);
+        });
       }
-      //   timer(1000);
+      // //   timer(1000);
 
-      // 성공시 resolve , 실패시 reject
-      let myprom = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve("성공");
-        }, 3000);
-      });
-      myprom.then((msg) => {
-        document.write("3초후 실행", msg);
-      });
+      // // 성공시 resolve , 실패시 reject
+      // let myprom = new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve("성공");
+      //   }, 3000);
+      // });
+      // myprom.then((msg) => {
+      //   document.write("3초후 실행", msg);
+      // });
+      const run = async () => {
+        document.write("시작");
+        let time = await timer(1000);
+        document.write("time" + time);
+        time = await timer(1000);
+        document.write("time" + time);
+      };
+      run();
+      // ajax : 비동기처리를 하는 통신방법.
+      // 비동기작업시 콜백지옥에 빠짐.
+      // 콜백내에서의 순서가 정해진다.
     </script>
   </body>
 </html>
