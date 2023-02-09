@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>api</title>
+  </head>
+  <body>
+    <script>
+      //오늘날짜 생성
+      let date = new Date();
+
+      let year = String(date.getFullYear());
+      let month = String(date.getMonth() + 1).padStart(2, "0");
+      let day = String(date.getDate()).padStart(2, "0");
+
+      let today = year + month + day;
+      console.log(today);
+    </script>
+    <!-- <script src="xhr.js"></script> -->
+    <script src="fetch.js"></script>
+  </body>
+</html>
