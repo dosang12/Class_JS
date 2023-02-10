@@ -5,19 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>api</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
   </head>
   <body>
-    <script>
-      //오늘날짜 생성
-      let date = new Date();
-
-      let year = String(date.getFullYear());
-      let month = String(date.getMonth() + 1).padStart(2, "0");
-      let day = String(date.getDate()).padStart(2, "0");
-
-      let today = year + month + day;
-      console.log(today);
-    </script>
+    <div id="containerweather"></div>
+    <span>출처:<a href="https://www.data.go.kr/data/15084084/openapi.do"> 기상청 Data</a></span>
+    <script src="date.js"></script>
     <!-- <script src="xhr.js"></script> -->
     <script src="fetch.js"></script>
   </body>

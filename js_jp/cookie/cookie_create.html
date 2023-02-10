@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MakeCookie</title>
+  </head>
+  <body>
+    <script>
+      // document.cookie = "Name=Value(값);Expires=날짜;Domain=도멘인;Path=경로;Secure";
+
+      // 오늘 날짜를 변수에 저장하고 파기일을 7일 후로 지정.
+      let date = new Date(); // 날짜 초기화
+      // .getDate() 날짜 취득
+      // .setDate() 날짜 설정
+      // .getHours() 시간 취득
+
+      date.setDate(date.getDate() + 7);
+
+      //쿠키 지정변수
+      let setCookie = "";
+      setCookie += "MangoWeb=popupCookie;";
+      setCookie += "Expires=" + date.toUTCString();
+      document.cookie = setCookie;
+    </script>
+  </body>
+</html>

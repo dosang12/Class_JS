@@ -1,0 +1,9 @@
+.swiper {
+  width: 800px;
+  height: 300px;
+}
+.swiper-pagination-bullet {
+  background: var(--bs-pink);
+  display: inline-block;
+  padding: 10px;
+}
