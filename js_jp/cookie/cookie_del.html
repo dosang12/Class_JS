@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DelCookie</title>
+  </head>
+  <body>
+    <button id="delCookie">쿠키삭제</button>
+    <script>
+      let date = new Date();
+      function delCookie() {
+        date.setDate(date.getDate() - 1);
+        let setCookie = "";
+        setCookie += "MangoWeb=popupCookie;";
+        setCookie += "Expires=" + date.toUTCString();
+        document.cookie = setCookie;
+      }
+      document.querySelector("#delCookie").addEventListener("click", function () {
+        delCookie();
+        alert("쿠키삭제완료");
+      });
+      // delCookie();
+
+      //쿠키는 유통기한이 있다. Expires 일이 지나면 삭제.
+    </script>
+  </body>
+</html>
