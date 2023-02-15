@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>textarea</title>
+  </head>
+  <body>
+    <h1>Form 요소의 값을 얻어오기</h1>
+    <textarea id="myText">택배는 문앞에 부탁요</textarea>
+    <p class="log"></p>
+
+    <script>
+      const ele = document.querySelector("#myText");
+      const val = ele.value;
+      ele.addEventListener("input", fn);
+      function fn(e) {
+        const newVal = e.target.value;
+        const log = document.querySelector(".log");
+        //줄바꿈 -> 정규표현식: 컴퓨터가 화면에 사람이
+        //이해하는 문자를 표현하기 위해 약속된 표현방식 \n=줄바꿈
+        const htmlStr = newVal.split("\n").join("<br/>");
+        tLog.innerHTML = `${htmlStr}`;
+      }
+    </script>
+    <!-- <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script>
+      const el = $("$myText").val();
+      console.log(el);
+    </script> -->
+  </body>
+</html>
