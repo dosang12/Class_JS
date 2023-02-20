@@ -10,6 +10,7 @@
     <select id="pref"></select>
     <p class="log"></p>
     <script>
+      //행정지역 코드 배열
       const PREF_LIST = [
         { value: 1100, name: "서울" },
         { value: 3611, name: "세종" },
@@ -61,13 +62,19 @@
       ];
       //select 요소 참조
       const el = document.querySelector("#pref");
-      //option
+      //option 동적요소생성
+      //1. 빈 변수 생성(초기값)
+      //  let optStr
+      //2. 1번에서 생성한 변수에 배열(반복문)의 원소를 추가할당 a+=b
+
       let optStr = '<option value="선택하세요">선택하세요</option>';
+
       PREF_LIST.forEach((e) => {
         optStr += `<option value="${e.value}">${e.name} </option>`;
       });
+
       el.innerHTML = optStr;
-      //변경시 이벤트
+      //옵션 변경시 이벤트
       el.addEventListener("change", function (e) {
         const val = e.target.value;
         document.querySelector(".log").innerHTML = `선택하신 지역의 코드는 ${val}입니다.`;
