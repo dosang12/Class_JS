@@ -29,7 +29,7 @@
   width: 100%;
 }
 
-.active h2 {
+ul.active li h2 {
   position: absolute;
   padding: 0px 10px;
   top: 50%;
@@ -41,13 +41,13 @@
   background: linear-gradient(to right, yellow 0%, lightgreen);
 }
 
-.active h2 {
+ul.active .active h2 {
   animation: moveUp 0.5s forwards;
 }
 @keyframes moveUp {
   from {
     opacity: 0;
-    transform: translate(-50%, 400%);
+    transform: translate(-50%, 700%);
   }
   to {
     opacity: 1;

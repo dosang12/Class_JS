@@ -31,12 +31,6 @@ function js() {
   const nav = document.querySelector("nav");
   const sections = document.querySelectorAll("section");
   const gnb = nav.querySelectorAll(".gnb>li");
-  const sidenav = document.querySelectorAll(".sideNav>li");
-  function removeON(obj) {
-    sidenav.forEach((o) => {
-      o.classList.remove("on");
-    });
-  }
   let scrollTop;
   window.addEventListener("scroll", function () {
     // scrollTop=window.pageYOffset;
@@ -44,43 +38,80 @@ function js() {
     scrollTop = window.scrollY; //이게 표준
     animate(scrollTop);
   });
-  let gap = 200;
+  let gap = 350;
   const animate = (sct) => {
     //section
-    sections.forEach((el, idx) => {
-      //idx :012345678
-      //gnb[idx]
+    sections.forEach(function (el) {
       let sectionTop = el.offsetTop;
+      //스크롤이 해당위치를 넘어가면 클래스를 추가해서 배경효과를 줌.
       if (sct > sectionTop - gap) {
-        gsap.to(el, { background: "#8d3dae" });
-        gnb.forEach((obj) => {
-          obj.classList.remove("on");
-        });
-        gnb[idx].classList.add("on");
+        el.classList.add("sectionIn");
       }
     });
-    //조건변경-nav의 높이만큼 스크롤이 내려오면 sticky
-    // 요소의 높이었기. element.clientHei
-    sct >= gap ? nav.classList.add("sticky") : nav.classList.remove("sticky");
+    //sticky-nav
+    if (sct >= gap) {
+      nav.classList.add("sticky");
+    }
+    if (sct >= gap * 2) {
+      nav.style.background = "blue";
+    } else {
+      nav.classList.remove("sticky");
+      nav.style.background = "green";
+    }
   };
-
   //gnb를 클릭하면 해당 섹션으로 부드럽게 이동
   gnb.forEach((el) => {
     el.addEventListener("click", function (e) {
       e.preventDefault();
       document.querySelector(el.firstElementChild.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
-      removeON(gnb);
-      el.classList.add("on");
-    });
-  });
-  sidenav.forEach((el) => {
-    el.addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelector(el.firstElementChild.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
-      removeON(sidenav);
+      gnb.forEach((obj) => {
+        oj.classList.remove("on");
+      });
       el.classList.add("on");
     });
   });
 }
-
 js();
+
+// 2단계 제이쿼리로 바꾸기!!
+
+// function jq() {
+//   const sections = $("section");
+//   let scrollTop;
+
+//   $(window).scroll(function () {
+//     scrollTop = $(this).scrollTop();
+//     animate(scrollTop);
+//   });
+
+//   let gap = 300;
+//   const animate = (sct) => {
+//     sections.each((idx, el) => {
+//       /* el이 제이쿼리 객체로 반환되지 않고 일반태그로 반환돼서 매번 반환값을 객체로 변환해야함
+//             idx를 .eq 메서드에 넣어서 작성함
+//         */
+//       let tg = sections.eq(idx);
+//       if (sct > tg.offset().top - gap) {
+//         tg.addClass("sectionIn");
+//       }
+//     });
+//   };
+//   //   const animate = (sct) => {
+//   //     //내장함수 정해진자리
+//   //     //array(배열).forEach(element,index) 배열자료형만 취급한다.
+//   //     //$array(배열).each(element,index)
+//   //     $(array).each(index);
+//   //     sections.each((idx, el) => {
+//   //       let tg = el;
+//   //       let sectionTop = tg.offset().top;
+//   //       if (sct > sectionTop - gap) {
+//   //         el.addClass("sectionIn");
+//   //       }
+//   //       //   let sectionTop = el.offsetTop;s
+//   //       //   if (sct > sectionTop - gap) {
+//   //       //     el.classList.add("sectionIn");
+//   //       //   }
+//   //     });
+//   //   };
+// }
+// //jq();
