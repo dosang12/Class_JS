@@ -8,7 +8,7 @@ https://github.com/dosang12/readme-template/tree/master/korean
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-[![React_version][react_image][npm-url]
+[![React_version][react_image]][npm-url]
 
 한 두 문단으로 프로젝트 소개 글을 작성합니다.
 
