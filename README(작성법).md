@@ -8,6 +8,8 @@ https://github.com/dosang12/readme-template/tree/master/korean
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
+[![React_version][react_image][npm-url]
+
 한 두 문단으로 프로젝트 소개 글을 작성합니다.
 
 ![](https://user-images.githubusercontent.com/113905725/228405200-dbb57066-1e22-49da-85f7-aacebc92238a.png)
@@ -88,3 +90,4 @@ XYZ 라이센스를 준수하며 `LICENSE`에서 자세한 정보를 확인할 �
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
 [wiki]: https://github.com/yourname/yourproject/wiki
+[react_image]: https://img.shields.io/badge/react-v18-orange
